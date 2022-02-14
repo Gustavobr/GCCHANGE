@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" name="viewport"
+	content="width=device-width, initial-scale=1.0" />
+<title>Nova Change</title>
+
+<style>
+.required:after {
+	content: " *";
+	color: red;
+}
+</style>
+</style>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	crossorigin="anonymous" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" th:href="@{/}">GC Changes</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#"
+						id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Acoes</a>
+						<div class="dropdown-menu"
+							aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" th:href="@{/novo}">Nova Change</a> <a
+								class="dropdown-item" th:href="@{/status}">Status da Change</a>
+							<a class="dropdown-item" th:href="@{/email}">E-mail</a> <a
+								class="dropdown-item" th:href="@{/autorizadores}">Autorizadores</a>
+
+						</div></li>
+
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="container  col-md-4 sm-4 mt-4 ml-6 mr-3">
+				<div class="card sm-4">
+					<div class="card-header text-center badge bg-dark">
+						<p class="fs-3 text mt-2">
+							<em class="fa fa-book" aria-hidden="true"><span>Nova
+									Requisição de Change</span></em>
+						</p>
+					</div>
+					<div class="card-body col-md-12 form-group">
+						<form id="form_change" th:action="@{/save}" method="post"
+							class="form-inline form-group ml-5 col-md-10">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="row">
+											<p class="fs-3 text label label-default">Solicitante</p>
+											<hr class="divider py-1 bg-dark" />
+											</p>
+											<div id="solicitante" class="row mb-4 form-control">
+												<label for="nome" class="form-label"><b
+													class="badge bg-dark">Nome:</b></label> <select
+													class="form-select form-select-sm" aria-label="Nome"
+													name="nome" required=required>
+													<option selected><b class="badge bg-dark">Roberto
+															Pinho </b></option>
+													<option value="Roberto Pinho">Roberto Pinho</option>
+												</select> <br /> <label for="filial" class="form-label"><b
+													class="badge bg-dark">Filial:</b></label> <select
+													class="form-select form-select-sm" aria-label="Filial"
+													name="filial" required=required>
+													<option selected><b class="badge bg-dark">HO -
+															Tamboré </b></option>
+													<option value="Requisicação Simples">HO - Tamboré</option>
+												</select> <br />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p class="fs-4 textlabel label-default">Detalhes</p>
+							<hr class="divider py-1 bg-dark" />
+
+							<!-- <label for="Título_change" class="form-label"><b
+								class="badge bg-dark">Título da Change:</b></label> <input type="text"
+								class="form-control" name="briefDescription"
+								placeholder="Título da Change" required=required /> <br />-->
+							<label for="action" class="form-label"><b
+								class="badge bg-dark">Causa da Change:</b></label>
+							<textarea name="action" id="change_cause"
+								class="md-textarea form-control" rows="10"
+								placeholder="Lista de tasks vinculadas e objetos vinculados."
+								th:text="${retorno}"></textarea>
+							<br /> <select class="form-select form-select-sm"
+								aria-label="Tipo de Change" name="changeType" required=required>
+								<option selected><b class="badge bg-dark">Tipo de
+										Change</b></option>
+								<option value="Requisicação Simples">Requisição Simples</option>
+								<option value="Change-CAB">Change-CAB</option>
+								<option value="Change-ECAB">Change-ECAB</option>
+								<option value="Requisição Complexa">Requisição Complexa</option>
+								<option value="Change de Catálogo">Change de Catálogo</option>
+							</select> <br />
+							<p class="fs-4 textlabel label-default">Planejamento</p>
+							<hr class="divider py-1 bg-dark" />
+							<label for="impacto" class="form-label"><b
+								class="badge bg-dark">Impacto:</b></label> <select name="impact"
+								class="form-select form-select-sm" aria-label="Tipo de Impacto"
+								required=required>
+								<option selected>Escolha</option>
+								<option value="Baixo">Baixo</option>
+								<option value="Médio">Médio</option>
+								<option value="Alto">Alto</option>
+							</select> <br /> <label for="data" class="form-label"><b
+								class="badge bg-dark">Data de Execução:</b></label> <input
+								type="datetime-local" name="plannedEndDate"
+								placeholder="Data para execução" required=required /> <br /> <br />
+							<p class="fs-4 textlabel label-default">Aprovar Requisição</p>
+							<hr class="divider py-1 bg-dark" />
+							<label for="operator" class="form-label"><b
+								class="badge bg-dark">Operador:</b></label><br /> <br /> <select
+								required=required name="operator" class="form-select-sm"
+								placeholder="Aprovador">
+								<option selected>Selecione</option>
+								<option value="fstenor">Flávio Tenório</option>
+								<option value="jborner">Jeiel Borner</option>
+							</select> <br /> <label for="status" class="form-label"
+								aria-label="status da change" required=required></label> <select
+								name="status" class="form-select form-select-sm">
+								<option selected>Aprovada</option>
+								<option value="Aguardando aprovação">Aguardando
+									aprovação</option>
+								<option value="Aprovada">Aprovada</option>
+								<option value="Reprovada">Reprovada</option>
+							</select> <br />
+							<p class="fs-4 textlabel label-default">Planejador</p>
+							<!--  <p class="fs-6 textlabel label-default">Dados da Atividade:</p>-->
+
+							<hr class="divider py-1 bg-dark" />
+							<!--  <label for="activity_description" class="form-label"><b
+								class="badge bg-dark">Descrição - Atividade:</b></label> <input
+								type="text" name="activity_description" placeholder="Descrição"
+								required=required class="form-control" /> <br />-->
+							<p class="fs-6 textlabel label-default">Planejamento -
+								Atividade:</p>
+							<!--  <label for="activityType" class="form-label"><b
+								class="badge bg-dark">Planejado para a fase:</b></label> <select
+								class="form-select form-select-sm" name="activityType"
+								required=required>
+								<option selected>Andamento</option>
+								<option value="progress">Andamento</option>
+							</select>-->
+							<br /> <label for="activity_plannedFinalDate" class="form-label"><b
+								class="badge bg-dark">Data final da Atividade:</b></label> <input
+								type="datetime-local" name="plannedFinalDate" required=required />
+							<br />
+
+							<!-- <p class="fs-6 textlabel label-default">Processamento</p> -->
+
+							<!--  <label for="groupOperators" class="form-label"><b>Grupo
+									de operadores:</b></label> <select class="form-select form-select-sm"
+								name="activity_operatorGroup" required=required>
+								<option selected>Aprovadores-CAB</option>
+								<option value="Aprovadores-CAB">Aprovadores-CAB</option>
+							</select>-->
+							<!--  <br /> <br /> <label for="operator" class="form-label"><b
+								class="badge bg-dark">Operador:</b></label> <input type="text"
+								name="activity_operator" required=required
+								class="form-control form-group" />-->
+							<!--   <br /> <label
+								for="activity_status"><b class="badge bg-dark">Status:</b></label>
+							<br /> <select name="activity_status" required=required
+								class="form-select form-select-sm">
+								<option selected>Pronta para iniciar</option>
+								<option value="Pronta para iniciar">Pronta para iniciar</option>
+								<option value="Ignorada">ignorada</option>
+							</select>-->
+							<br />
+							<button type="submit" class=" form-control btn btn-sm btn-dark">
+								<em class="fa fa-file" aria-hidden="true">Gravar</em>
+							</button>
+							<div class="alert alert-success" role="alert" th:if="${message}"
+								th:text="${message}"></div>
+							<div class="alert alert-danger" role="alert" th:if="${error}"
+								th:text="${error}"></div>
+					</div>
+					</form>
+				</div>
+			</div>
+			</div>
+		</main>
+</body>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">GC Changes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" th:replace="fragments/css :: css" />
+<script type="text/javascript" th:replace="fragments/js :: js"></script>
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container-fluid">
+		<div layout:fragment="content"></div>
+	</div>
+</body>
+</html>
