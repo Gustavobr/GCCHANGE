@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-//@EnableAutoConfiguration
+//*@EnableAutoConfiguration
 //@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
 //@ComponentScan(basePackageClasses = com.grpbg.Poc.Controller.AppController.class)
 //@Controller("/")
