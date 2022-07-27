@@ -1,6 +1,7 @@
 package com.grpbg.Poc.HttpClient;
 
 import java.net.URI;
+
 import java.net.http.HttpClient;
 import java.net.http.HttpClient.Version;
 import java.net.http.HttpRequest;
@@ -11,7 +12,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-import br.com.big.gctools.client.ClientJIRA;
+//import br.com.big.gctools.client.ClientJIRA;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
@@ -102,7 +103,7 @@ public class ClientTopDesk {
 		return null;
 	}
 
-	public static String Listchanges() throws HttpClientErrorException, Exception {
+	/*public static String Listchanges() throws HttpClientErrorException, Exception {
 		try {
 			List<br.com.big.gctools.dto.TaskDTO> lista = new ArrayList<>();
 			lista = ClientJIRA.exec();
@@ -119,6 +120,7 @@ public class ClientTopDesk {
 		}
 		return null;
 	}
+	*/
 
 	public static String getChange(String number) throws Exception {
 		try {

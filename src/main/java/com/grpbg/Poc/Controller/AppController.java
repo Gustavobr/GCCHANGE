@@ -87,8 +87,8 @@ public class AppController {
 
 	@RequestMapping(value = "/novo", method = RequestMethod.GET)
 	public String novaChange(Model model) throws HttpClientErrorException, Exception {
-		String retorno = ClientTopDesk.Listchanges();
-		model.addAttribute("retorno", retorno);
+		//String retorno = ClientTopDesk.Listchanges();
+		//model.addAttribute("retorno", retorno);
 		return "novo";
 	}
 
