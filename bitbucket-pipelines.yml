@@ -35,5 +35,5 @@ pipelines:
           script:
           - echo "Deploying to test environment"
           
-          - pipe: sonarsource/sonarcloud-scan:1.4.0
+          #- pipe: sonarsource/sonarcloud-scan:1.4.0
        
