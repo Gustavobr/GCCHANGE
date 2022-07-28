@@ -15,8 +15,10 @@ pipelines:
           caches:
             - maven
           script:
-            - mvn -s settings.xml -B verify
-            - mvn install
+           - mvn spring-boot:run
+           # - mvn clean
+           # - mvn -s settings.xml -B verify
+           #- mvn install
           after-script:
               # Collect checkstyle results, if any, and convert to Bitbucket Code Insights.
             - pipe: atlassian/checkstyle-report:0.3.0
